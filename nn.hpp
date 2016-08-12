@@ -3,6 +3,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <random>
 #include <vector>
 #include <tuple>
 #include "matrix.hpp"

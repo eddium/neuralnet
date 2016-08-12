@@ -11,7 +11,8 @@ void NeuralNet::training(const Matrix& X, const Matrix& y, double learning_rate,
     vector<size_t> sel(X.get_row());
     size_t nextValue = 0;
     generate(sel.begin(), sel.end(), [&]{ return nextValue++; });
-    random_shuffle(sel.begin(), sel.end());
+    random_device generator;
+    shuffle(sel.begin(), sel.end(), generator);
 
     const int NUM_TRAINING = 0.7 * X.get_row();
     vector<size_t> training = vector<size_t>(sel.begin(), sel.begin() + NUM_TRAINING);
